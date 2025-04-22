@@ -78,7 +78,8 @@ public class ListeSpectaclesActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Spectacle>> call, Throwable t) {
-                Toast.makeText(ListeSpectaclesActivity.this, "Erreur de connexion : " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ListeSpectaclesActivity.this, "Erreur de connexion : " + t.getMessage(), Toast.LENGTH_LONG).show();
+
             }
         });
     }

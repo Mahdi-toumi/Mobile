@@ -17,6 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        app:tint="#B39DDB"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -26,7 +27,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/playfair_display"
         android:text="Coulisses"
-        android:textColor="@android:color/white"
+        android:textColor="#B39DDB"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +42,7 @@
         android:layout_height="15dp"
         android:layout_marginTop="24dp"
         android:indeterminate="true"
-        android:indeterminateTint="#EDEDED"
+        android:indeterminateTint="#B39DDB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
