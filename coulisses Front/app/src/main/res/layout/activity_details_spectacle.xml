@@ -1,77 +1,195 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1E1B2E"
-    android:padding="16dp">
+    android:background="@color/dark_background"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="8dp">
+        android:padding="16dp">
 
-        <!-- Image avec coins arrondis -->
-        <ImageView
+        <!-- Image Header -->
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/detailImage"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginBottom="16dp"
+            android:layout_height="250dp"
             android:scaleType="centerCrop"
-            android:background="@drawable/rounded_image_bg"
-            app:srcCompat="@drawable/default_image" />
+            app:shapeAppearanceOverlay="@style/RoundedCornersLarge"
+            android:layout_marginBottom="16dp"
+            tools:src="@drawable/default_image" />
 
-        <!-- Titre du spectacle -->
-        <TextView
-            android:id="@+id/detailTitre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#E6DAF9"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/playfair_display"
-            android:layout_marginBottom="8dp" />
-
-        <!-- Date -->
-        <TextView
-            android:id="@+id/detailDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#B39DDB"
-            android:textSize="16sp"
-            android:layout_marginBottom="4dp" />
-
-        <!-- Heure -->
-        <TextView
-            android:id="@+id/detailHeure"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#B39DDB"
-            android:textSize="16sp"
-            android:layout_marginBottom="4dp" />
-
-        <!-- Ville -->
-        <TextView
-            android:id="@+id/detailVille"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#A094B7"
-            android:textSize="16sp"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Description avec fond adouci -->
-        <TextView
-            android:id="@+id/detailDescription"
+        <!-- Info Card -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:background="#29243A"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            android:lineSpacingExtra="4dp"
-            android:elevation="2dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="32dp"
-            android:fontFamily="sans-serif" />
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/card_background"
+            app:strokeColor="@color/stroke_color"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Titre -->
+                <TextView
+                    android:id="@+id/detailTitre"
+                    style="@style/TextAppearance.App.Headline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Date & Time Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_calendar"
+                        app:tint="@color/icon_tint"/>
+
+                    <TextView
+                        android:id="@+id/detailDateTime"
+                        style="@style/TextAppearance.App.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <!-- Duration & Capacity Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_clock"
+                            app:tint="@color/icon_tint"/>
+
+                        <TextView
+                            android:id="@+id/detailDuree"
+                            style="@style/TextAppearance.App.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_group"
+                            app:tint="@color/icon_tint"/>
+
+                        <TextView
+                            android:id="@+id/detailCapacity"
+                            style="@style/TextAppearance.App.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Location Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        style="@style/TextAppearance.App.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/location_title"
+                        android:layout_marginBottom="4dp"/>
+
+                    <TextView
+                        android:id="@+id/detailLieuNom"
+                        style="@style/TextAppearance.App.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/detailLieuAdresse"
+                        style="@style/TextAppearance.App.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/detailVille"
+                        style="@style/TextAppearance.App.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Description Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardElevation="4dp">
+
+            <TextView
+                android:id="@+id/detailDescription"
+                style="@style/TextAppearance.App.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="4dp"
+                android:padding="16dp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Action Button -->
+        <!-- Bouton principal -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReservation"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Réserver"
+            app:backgroundTint="@color/purple_500"
+            app:icon="@drawable/ic_ticket"
+            app:iconTint="@android:color/white" />
+
+        <!-- Bouton secondaire -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/detailSiteWeb"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Site web"
+            app:icon="@drawable/ic_public"
+            app:iconTint="@color/purple_500"
+            app:strokeColor="@color/purple_500"/>
+
     </LinearLayout>
 </ScrollView>

@@ -1,19 +1,29 @@
 package com.enicarthage.coulisses.models;
 
 import com.google.gson.annotations.SerializedName;
-
 import java.math.BigDecimal;
 
 public class Spectacle {
     private Long id;
     private String titre;
-    private String date; // ou LocalDate si tu veux l’utiliser avec Gson adapter
+    private String date; // peut rester en String si parsé dans l'adapter
     private BigDecimal heureDebut;
     private BigDecimal duree;
     private int nbSpectateurs;
-    @SerializedName("idLieu") // S'assurer que ça matche avec le JSON
+
+    @SerializedName("idLieu")
     private Lieu lieu;
 
+    @SerializedName("imageUrl")
+    private String imageUrl;
+
+    @SerializedName("siteWeb")
+    private String siteWeb;
+
+    @SerializedName("description")
+    private String description;
+
+    // Getters & Setters
 
     public Long getId() {
         return id;
@@ -37,6 +47,14 @@ public class Spectacle {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public BigDecimal getHeureDebut() {
@@ -69,5 +87,21 @@ public class Spectacle {
 
     public void setLieu(Lieu lieu) {
         this.lieu = lieu;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getSiteWeb() {
+        return siteWeb;
+    }
+
+    public void setSiteWeb(String siteWeb) {
+        this.siteWeb = siteWeb;
     }
 }

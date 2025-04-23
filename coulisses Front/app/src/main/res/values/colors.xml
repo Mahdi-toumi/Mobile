@@ -7,5 +7,26 @@
     <color name="purple_700">#6A0080</color>
     <color name="teal_700">#018786</color>
     <color name="deep_purple">#2E1B4E</color>
+    <color name="card_background">#2D2842</color>
+    <color name="textPrimary">#E6DAF9</color>
+    <color name="textSecondary">#B39DDB</color>
+    <color name="textTertiary">#A094B7</color>
+    <color name="textCaption">#7A6F8E</color>
+    <color name="secondary_text">#B3B3B3</color>
+    <color name="dark_background">#1B1430</color>
+    <color name="stroke_color">#3D3A45</color>
+    <color name="icon_tint">#B39DDB</color>
+    <color name="primary_color">#7E57C2</color>
+    <!-- Couleurs Material Design 3 -->
+    <color name="surface">#1B1430</color>
+    <color name="on_surface">#E6E1E5</color>
+    <color name="surface_container">#211C35</color>
+    <color name="surface_container_high">#2D2742</color>
+    <color name="on_surface_variant">#C8C5D0</color>
+    <color name="primary">#9575CD</color>
+    <color name="outline">#49454F</color>
+
+    <!-- Sélecteur de couleurs pour la navigation -->
+
 
 </resources>

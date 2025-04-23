@@ -1,87 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    card_view:cardCornerRadius="5dp"
-    card_view:cardElevation="10dp"
-    card_view:cardBackgroundColor="@color/white" >
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="4dp"
+    app:cardBackgroundColor="@color/surface_container"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/outline"
+    app:strokeWidth="1dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:orientation="horizontal"
-        android:paddingStart="0dp"
-        android:paddingTop="0dp"
-        android:paddingBottom="0dp">
+        android:layout_height="120dp"
+        android:padding="12dp">
 
-        <!-- Affiche du spectacle -->
-
-        <!-- Infos du spectacle -->
-        <ImageView
-            android:id="@+id/ivImage"
-            android:layout_width="87dp"
+        <!-- Image -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/itemImage"
+            android:layout_width="96dp"
             android:layout_height="match_parent"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/rounded_image_bg"
-            android:scaleType="centerCrop"
-            android:src="@drawable/default_image" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.Rounded" />
 
-        <LinearLayout
-            android:layout_width="263dp"
-            android:layout_height="69dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+        <!-- Contenu -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/itemImage"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
+            <!-- Titre -->
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvTitre"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/playfair_display"
-                android:paddingTop="5dp"
-                android:text="Nom du Spectacle"
-                android:textColor="@color/deep_purple"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.Title.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <!-- Date et Heure -->
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitre">
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tvDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:fontFamily="sans-serif"
-                    android:text="12 Avril 2025"
-                    android:textColor="#E0D7F9"
-                    android:textSize="14sp" />
+                    android:textAppearance="@style/TextAppearance.Body.Small"
+                    android:textColor="@color/on_surface_variant" />
 
-                <TextView
+                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tvHeure"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:text="20:00"
-                    android:textColor="#C7B8F2"
-                    android:textSize="14sp" />
+                    android:layout_marginStart="8dp"
+                    android:textAppearance="@style/TextAppearance.Body.Small"
+                    android:textColor="@color/primary" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/tvVille"
-                android:layout_width="match_parent"
+            <!-- Durée et Ville -->
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:fontFamily="sans-serif"
-                android:text="Tunis"
-                android:textColor="#A89DD9"
-                android:textSize="14sp" />
-        </LinearLayout>
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDate">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvDuree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.Label.Medium"
+                    android:textColor="@color/on_surface_variant" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="12dp"
+                    android:layout_marginHorizontal="8dp"
+                    android:background="@color/outline" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvVille"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.Label.Medium"
+                    android:textColor="@color/on_surface_variant" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

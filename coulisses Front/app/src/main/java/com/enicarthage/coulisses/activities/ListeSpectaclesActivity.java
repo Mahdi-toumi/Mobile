@@ -1,5 +1,8 @@
 package com.enicarthage.coulisses.activities;
+
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -18,8 +21,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import com.enicarthage.coulisses.R;
 
 public class ListeSpectaclesActivity extends AppCompatActivity {
 
@@ -42,20 +43,6 @@ public class ListeSpectaclesActivity extends AppCompatActivity {
 
         // Appel à l'API pour récupérer les spectacles
         fetchSpectaclesFromApi();
-
-        // Mettre en place le listener pour le champ de recherche
-        searchEditText.addTextChangedListener(new android.text.TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {}
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
-                spectacleAdapter.getFilter().filter(charSequence);
-            }
-
-            @Override
-            public void afterTextChanged(android.text.Editable editable) {}
-        });
     }
 
     // Fonction pour récupérer les spectacles depuis l'API
@@ -71,6 +58,22 @@ public class ListeSpectaclesActivity extends AppCompatActivity {
                     spectacleList = response.body(); // Récupère les spectacles
                     spectacleAdapter = new SpectacleAdapter(ListeSpectaclesActivity.this, spectacleList);
                     recyclerView.setAdapter(spectacleAdapter); // Met à jour l'adaptateur avec les données récupérées
+
+                    // Mettre en place le listener pour le champ de recherche après l'initialisation de l'adaptateur
+                    searchEditText.addTextChangedListener(new TextWatcher() {
+                        @Override
+                        public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {}
+
+                        @Override
+                        public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+                            if (spectacleAdapter != null) {
+                                spectacleAdapter.getFilter().filter(charSequence); // Applique le filtrage
+                            }
+                        }
+
+                        @Override
+                        public void afterTextChanged(Editable editable) {}
+                    });
                 } else {
                     Toast.makeText(ListeSpectaclesActivity.this, "Erreur dans la récupération des spectacles.", Toast.LENGTH_SHORT).show();
                 }
@@ -79,7 +82,6 @@ public class ListeSpectaclesActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Spectacle>> call, Throwable t) {
                 Toast.makeText(ListeSpectaclesActivity.this, "Erreur de connexion : " + t.getMessage(), Toast.LENGTH_LONG).show();
-
             }
         });
     }

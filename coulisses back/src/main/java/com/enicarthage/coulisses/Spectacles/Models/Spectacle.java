@@ -1,6 +1,5 @@
 package com.enicarthage.coulisses.Spectacles.Models;
 
-
 import com.enicarthage.coulisses.Lieu.Models.Lieu;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
@@ -30,9 +29,31 @@ public class Spectacle {
     @Column(name = "NBRSPECTATEUR", nullable = false)
     private Integer nbSpectateurs;
 
+    @Column(name = "IMAGEURL")
+    private String imageUrl;
+
+    @Column(name = "SITEWEB")
+    private String siteWeb;
+
+    @Column(name = "DESCRIPTION")
+    private String description;
+
     @ManyToOne
     @JoinColumn(name = "IDLIEU", nullable = false)
     private Lieu lieu;
+
+
+
+    // Getters et Setters
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    // Getters et Setters
 
     public Long getId() {
         return id;
@@ -78,7 +99,9 @@ public class Spectacle {
         return date;
     }
 
-    public void setDate(LocalDate date) {this.date = date;}
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
 
     public String getTitre() {
         return titre;
@@ -86,5 +109,21 @@ public class Spectacle {
 
     public void setTitre(String titre) {
         this.titre = titre;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getSiteWeb() {
+        return siteWeb;
+    }
+
+    public void setSiteWeb(String siteWeb) {
+        this.siteWeb = siteWeb;
     }
 }

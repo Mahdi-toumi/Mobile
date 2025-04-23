@@ -1,0 +1,29 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface">
+
+    <!-- Grid de photos artistiques -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/grid_photos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+        app:spanCount="2"
+        app:layout_constraintBottom_toTopOf="@id/btn_consulter"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Bouton de consultation -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_consulter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voir tous les spectacles"
+        app:icon="@drawable/logo_coulisses"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">Coulisses</string>
+    <string name="ville_inconnue">Ville inconnue</string>
+    <string name="site_non_disponible">Site web non disponible</string>
+    <string name="duree_format">Durée: %s</string>
+    <string name="heure_inconnue">--:--</string>
+    <string name="duree_inconnue">--h--</string>
+    <string name="erreur_site_web">Impossible d\'ouvrir le site web</string>
+    <string name="image_spectacle">Affiche du spectacle</string>
+    <string name="location_title">Lieu</string>
+    <string name="capacity_format">%d places</string>
+    <string name="reserve_now">Réserver maintenant</string>
+    <string name="website">Site officiel</string>
+    <string name="unknown">Non spécifié</string>
+    <string name="url_invalid">Lien non disponible</string>
+    <string name="browser_error">Impossible d\'ouvrir le lien</string>
+    <string name="menu_home">Accueil</string>
+    <string name="menu_search">Recherche</string>
+    <string name="menu_profile">Profil</string>
+
+    <!-- Recherche -->
+    <string name="search_hint">Rechercher un spectacle</string>
+    <string name="search_content_description">Champ de recherche de spectacles</string>
+    <string name="search_pane_title">Recherche de spectacles</string>
+
+    <!-- Générique -->
+    <string name="default_city">Ville inconnue</string>
+    <string name="error_website">Site indisponible</string>
 </resources>

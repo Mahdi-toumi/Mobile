@@ -16,6 +16,12 @@
         android:theme="@style/Theme.Coulisses"
         tools:targetApi="31">
         <activity
+            android:name=".activities.item_spectacle"
+            android:exported="false" />
+        <activity
+            android:name=".activities.HomeFragment"
+            android:exported="false" />
+        <activity
             android:name=".activities.DetailsSpectacleActivity"
             android:exported="false" />
         <activity
