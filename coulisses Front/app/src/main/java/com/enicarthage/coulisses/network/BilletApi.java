@@ -21,5 +21,5 @@ public interface BilletApi {
 
     // Détail d’un Lieu
     @GET("api/billet/spectacle/{spectacleId}")
-    Call<Billet> getBilletBySpectacleId(@Path("id") Long id);
+    Call<List<Billet>> getBilletBySpectacleId(@Path("spectacleId") Long id);
 }

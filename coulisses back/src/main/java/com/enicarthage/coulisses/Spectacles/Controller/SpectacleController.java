@@ -23,5 +23,11 @@ public class SpectacleController {
     public Spectacle getById(@PathVariable Long id) {
         return spectacleService.getSpectacleById(id);
     }
+
+    @GetMapping("/featured")
+    public List<Spectacle> getFeaturedSpectacles() {
+        return spectacleService.getFeaturedSpectacles();
+    }
+
 }
 

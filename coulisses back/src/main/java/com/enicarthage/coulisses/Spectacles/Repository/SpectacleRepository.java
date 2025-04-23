@@ -9,5 +9,7 @@ import java.util.List;
 @Repository
 public interface SpectacleRepository extends JpaRepository<Spectacle, Long> {
     List<Spectacle> findByTitreContainingIgnoreCase(String titre);
+
+    List<Spectacle> findTop5ByOrderByDateDesc();
 }
 

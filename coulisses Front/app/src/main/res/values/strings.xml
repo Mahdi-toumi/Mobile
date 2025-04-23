@@ -1,29 +1,34 @@
 <resources>
     <string name="app_name">Coulisses</string>
-    <string name="ville_inconnue">Ville inconnue</string>
-    <string name="site_non_disponible">Site web non disponible</string>
-    <string name="duree_format">Durée: %s</string>
-    <string name="heure_inconnue">--:--</string>
-    <string name="duree_inconnue">--h--</string>
-    <string name="erreur_site_web">Impossible d\'ouvrir le site web</string>
-    <string name="image_spectacle">Affiche du spectacle</string>
-    <string name="location_title">Lieu</string>
-    <string name="capacity_format">%d places</string>
-    <string name="reserve_now">Réserver maintenant</string>
-    <string name="website">Site officiel</string>
-    <string name="unknown">Non spécifié</string>
-    <string name="url_invalid">Lien non disponible</string>
-    <string name="browser_error">Impossible d\'ouvrir le lien</string>
-    <string name="menu_home">Accueil</string>
-    <string name="menu_search">Recherche</string>
-    <string name="menu_profile">Profil</string>
+    <string name="featured_spectacles">Featured Spectacles</string>
+    <string name="show_all_spectacles">Show All Spectacles</string>
+    <string name="spectacles_list">Spectacles List</string>
+    <string name="reserve_now">Reserve Now</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone">Phone Number</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="ticket_details">Ticket Details</string>
+    <string name="ticket_number">Ticket #%1$s</string>
+    <string name="event">Event: %1$s</string>
+    <string name="date_time">Date &amp; Time: %1$s at %2$s</string>
+    <string name="location">Location: %1$s</string>
+    <string name="category">Category: %1$s</string>
+    <string name="price">Price: %1$.2f TND</string>
+    <string name="reservation_complete">Reservation Complete!</string>
+    <string name="thank_you">Thank you for your reservation</string>
+    <string name="view_ticket">View Ticket</string>
+    <string name="back_to_home">Back to Home</string>
+    <string name="create_account">Create Account</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
 
-    <!-- Recherche -->
-    <string name="search_hint">Rechercher un spectacle</string>
-    <string name="search_content_description">Champ de recherche de spectacles</string>
-    <string name="search_pane_title">Recherche de spectacles</string>
 
-    <!-- Générique -->
-    <string name="default_city">Ville inconnue</string>
-    <string name="error_website">Site indisponible</string>
 </resources>

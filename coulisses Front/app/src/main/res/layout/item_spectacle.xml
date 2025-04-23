@@ -1,114 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="8dp"
-    android:layout_marginVertical="4dp"
-    app:cardBackgroundColor="@color/surface_container"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="2dp"
-    app:strokeColor="@color/outline"
-    app:strokeWidth="1dp">
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:padding="12dp">
+        android:layout_height="wrap_content"
+        android:padding="16dp">
 
-        <!-- Image -->
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/itemImage"
-            android:layout_width="96dp"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <ImageView
+            android:id="@+id/spectacleImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.Rounded" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Contenu -->
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <TextView
+            android:id="@+id/spectacleTitle"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="12dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/itemImage"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toEndOf="@id/spectacleImage"
+            app:layout_constraintTop_toTopOf="@id/spectacleImage" />
 
-            <!-- Titre -->
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvTitre"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textAppearance="@style/TextAppearance.Title.Medium"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/spectacleDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintEnd_toEndOf="@id/spectacleTitle"
+            app:layout_constraintStart_toStartOf="@id/spectacleTitle"
+            app:layout_constraintTop_toBottomOf="@id/spectacleTitle" />
 
-            <!-- Date et Heure -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvTitre">
+        <TextView
+            android:id="@+id/spectacleLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintEnd_toEndOf="@id/spectacleDate"
+            app:layout_constraintStart_toStartOf="@id/spectacleDate"
+            app:layout_constraintTop_toBottomOf="@id/spectacleDate" />
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.Body.Small"
-                    android:textColor="@color/on_surface_variant" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvHeure"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:textAppearance="@style/TextAppearance.Body.Small"
-                    android:textColor="@color/primary" />
-            </LinearLayout>
-
-            <!-- Durée et Ville -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDate">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvDuree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.Label.Medium"
-                    android:textColor="@color/on_surface_variant" />
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="12dp"
-                    android:layout_marginHorizontal="8dp"
-                    android:background="@color/outline" />
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tvVille"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.Label.Medium"
-                    android:textColor="@color/on_surface_variant" />
-            </LinearLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/spectacleTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/text_secondary"
+            app:layout_constraintEnd_toEndOf="@id/spectacleLocation"
+            app:layout_constraintStart_toStartOf="@id/spectacleLocation"
+            app:layout_constraintTop_toBottomOf="@id/spectacleLocation" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</com.google.android.material.card.MaterialCardView>
+</androidx.cardview.widget.CardView>

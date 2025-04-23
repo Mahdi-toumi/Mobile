@@ -14,6 +14,9 @@ public interface SpectacleApi {
     Call<List<Spectacle>> getAllSpectacles();
 
     // Détail d’un spectacle
-    @GET("api/spectacle/{id}")
-    Call<Spectacle> getSpectacleById(@Path("id") Long id);
+    @GET("api/spectacle/{spectacleId}")
+    Call<Spectacle> getSpectacleById(@Path("spectacleId") Long id);
+
+    @GET("spectacles/featured")
+    Call<List<Spectacle>> getFeaturedSpectacles();
 }

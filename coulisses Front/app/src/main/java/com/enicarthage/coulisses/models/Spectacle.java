@@ -1,9 +1,12 @@
 package com.enicarthage.coulisses.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 import java.math.BigDecimal;
 
-public class Spectacle {
+public class Spectacle implements Parcelable {
     private Long id;
     private String titre;
     private String date; // peut rester en String si parsé dans l'adapter
@@ -103,5 +106,49 @@ public class Spectacle {
 
     public void setSiteWeb(String siteWeb) {
         this.siteWeb = siteWeb;
+    }
+
+    protected Spectacle(Parcel in) {
+        id = in.readLong();
+        titre = in.readString();
+        date = in.readString();
+        heureDebut = new BigDecimal(in.readString());
+        duree = new BigDecimal(in.readString());
+        nbSpectateurs = in.readInt();
+        lieu = in.readParcelable(Lieu.class.getClassLoader());
+        imageUrl = in.readString();
+        siteWeb = in.readString();
+        description = in.readString();
+    }
+
+    public static final Creator<Spectacle> CREATOR = new Creator<Spectacle>() {
+        @Override
+        public Spectacle createFromParcel(Parcel in) {
+            return new Spectacle(in);
+        }
+
+        @Override
+        public Spectacle[] newArray(int size) {
+            return new Spectacle[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(id);
+        dest.writeString(titre);
+        dest.writeString(date);
+        dest.writeString(heureDebut.toString());
+        dest.writeString(duree.toString());
+        dest.writeInt(nbSpectateurs);
+        dest.writeParcelable(lieu, flags);
+        dest.writeString(imageUrl);
+        dest.writeString(siteWeb);
+        dest.writeString(description);
     }
 }

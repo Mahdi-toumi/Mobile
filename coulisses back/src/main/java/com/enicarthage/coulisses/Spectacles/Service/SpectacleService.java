@@ -21,6 +21,11 @@ public class SpectacleService {
         return spectacleRepository.findById(id).orElse(null);
     }
 
+    public List<Spectacle> getFeaturedSpectacles() {
+        return spectacleRepository.findTop5ByOrderByDateDesc();
+    }
+
+
 }
 
 
